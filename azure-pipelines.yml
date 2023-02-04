@@ -7,6 +7,12 @@ trigger:
 
 resources:
 - repo: self
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(8116c868-e802-4578-aa29-a800eba2f536)'
+    appType: 'webAppHyperVContainer'
+    WebAppName: 'test'
 
 variables:
   # Container registry service connection established during pipeline creation
